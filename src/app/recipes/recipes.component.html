@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list (selectionChanged)="onSelectionChanged($event)"></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <!-- ngIf only displayed when recipe exists - no instance checking required  -->
+        <app-recipe-detail 
+            *ngIf="recipe; else noSelectionText"
+            [recipe]="recipe">   
+            
+        <!-- <app-recipe-detail 
+            *ngIf="recipe; else noSelectionText"
+            [description]="recipe ? recipe.description: ''"
+            [name]="recipe ? recipe.name : ''">  
+        </app-recipe-detail> -->
+       
+        </app-recipe-detail>
+        <ng-template 
+                #noSelectionText>
+                <p> Please select a recipe </p>
+        </ng-template>
+    
+    </div>
+</div>

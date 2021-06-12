@@ -1,0 +1,12 @@
+<app-header #header (onTabSelected)="updateDisplayFeature($event)" ></app-header>
+<div class="container">
+  <div class="row">
+    <div >
+      <!-- Another way to do it (my own solution)  -->
+      <!-- <app-recipes *ngIf=" header.currentTabIndex === 0"></app-recipes>
+      <app-shopping-list  *ngIf=" header.currentTabIndex === 1" ></app-shopping-list>      -->
+      <app-recipes *ngIf="feature === 0"></app-recipes>
+      <app-shopping-list  *ngIf="feature === 1" ></app-shopping-list>      
+    </div>
+  </div>
+</div>
